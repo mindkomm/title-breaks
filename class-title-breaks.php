@@ -35,7 +35,7 @@ class Title_Breaks {
 		 * @api
 		 * @param string $break_character The character to use for hard breaks.
 		 */
-		$break = add_filter( 'title_breaks/character/hard_break', '<br>' );
+		$break = apply_filters( 'title_breaks/character/hard_break', '<br>' );
 
 		// Add shy character
 		$title = str_replace( '%-%', self::SHY, $title );
