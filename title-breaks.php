@@ -10,12 +10,14 @@
  * Domain Path: languages/
  * Version: 1.0.0
  */
+defined( 'ABSPATH' ) or exit;
+
 add_action( 'plugins_loaded', function() {
 	load_plugin_textdomain( 'title-breaks', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
-	if ( ! is_admin() ) {
-		require_once 'class-title-breaks.php';
+	require_once 'class-title-breaks.php';
 
+	if ( ! is_admin() ) {
 		$title_breaks = new Title_Breaks();
 		$title_breaks->init();
 	} else {

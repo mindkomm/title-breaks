@@ -1,9 +1,18 @@
 <?php
 
+defined( 'ABSPATH' ) or exit;
+
 /**
  * Class Title_Breaks
  */
 class Title_Breaks {
+	/**
+	 * Meta key to use for custom title.
+	 *
+	 * @var string A meta key.
+	 */
+	public static $meta_key = 'post_title_display';
+
 	/**
 	 * Shy character.
 	 */
@@ -14,21 +23,29 @@ class Title_Breaks {
 	 */
 	public function init() {
 		// Filter the title that is used in the frontend.
-		add_filter( 'the_title', array( $this, 'filter_title' ) );
-		add_filter( 'get_wp_title_rss', array( $this, 'filter_title' ) );
-
-		// Do not filter titles used in <title> tags in the head of the document.
-		add_filter( 'single_post_title', array( $this, 'remove_placeholders' ) );
+		add_filter( 'the_title', array( $this, 'filter_title' ), 10, 2 );
 	}
 
 	/**
 	 * Filter post title.
 	 *
 	 * @param string $title A post title.
+	 * @param null   $post_id The post ID.
 	 *
 	 * @return string The filtered title.
 	 */
-	public function filter_title( $title ) {
+	public function filter_title( $title, $post_id = null ) {
+		if ( $post_id ) {
+			$title_display = get_post_meta( $post_id, self::$meta_key, true );
+
+			// Bail out if no custom display title was set.
+			if ( empty( $title_display ) ) {
+				return $title;
+			}
+
+			$title = $title_display;
+		}
+
 		/**
 		 * Filters the character to use for hard breaks.
 		 *

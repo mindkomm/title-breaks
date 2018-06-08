@@ -1,38 +1,42 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-04-05 17:05+0200\n"
-"PO-Revision-Date: 2018-04-05 17:07+0200\n"
+"POT-Creation-Date: 2018-06-08 13:47+0200\n"
+"PO-Revision-Date: 2018-06-08 13:47+0200\n"
 "Last-Translator: Lukas Gächter <lukas.gaechter@mind.ch>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Plugin Name of the plugin/theme
-#: class-title-breaks-admin.php:22
+#: class-title-breaks-admin.php:46
 msgid "Title Breaks"
 msgstr "Titel-Umbrüche"
 
-#: class-title-breaks-admin.php:34
+#: class-title-breaks-admin.php:62
 msgid ""
 "Control how your titles break by including one of the following placeholders "
-"in your post title."
+"in your post title:"
 msgstr ""
 "Kontrolliere, wie deine Titel umbrechen, indem du einen der folgenden "
-"Platzhalter in den Titel einfügst."
+"Platzhalter in den Titel einfügst:"
 
-#: class-title-breaks-admin.php:37
+#: class-title-breaks-admin.php:65
 msgid "Soft Hyphen"
 msgstr "Bedingtes Trennzeichen"
 
-#: class-title-breaks-admin.php:38
+#: class-title-breaks-admin.php:66
 msgid "Hard Break"
 msgstr "Harter Umbruch"
+
+#: class-title-breaks-admin.php:74
+msgid "Title for display"
+msgstr "Titel für Anzeige auf der Website"
 
 #. Description of the plugin/theme
 msgid "Control how your post titles will break"

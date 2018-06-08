@@ -1,12 +1,12 @@
 # Title Breaks
 
-Title Breaks is a WordPress plugin allows you to control how your post titles will break.
+Title Breaks is a WordPress plugin that allows you to control how your post titles will break.
 
-By adding the following placeholders to your post titles, you can control which HTML characters will be inserted in the frontend:
+It offers a metabox when you edit a post, where you can enter your post title that should be used when it’s displayed in the frontend. By adding the following placeholders to your display post titles, you can control which HTML characters will be inserted in the frontend:
 
 - `%-%` – Soft hyphen
 - `%%%` – Hard break
 
 The placeholders will only be replaced in the frontend and will be applied everywhere where `the_title` filter is used. This means that the placeholders will also work for menu item labels.
 
-Be aware that if you deactivate this plugin, your post titles will show the placeholders everywhere.
+If you try to use placeholders in a post title, the plugin will remove them before saving them to the database, because there are some compatibility issues with certain plugins for placeholders in post titles.
